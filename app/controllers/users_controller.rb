@@ -38,8 +38,8 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      @user.avatar.purge if params[:avatar].present?
-      @user.avatar.attach(params[:avatar])
+      @user.avatar.purge if params[:user][:avatar].present?
+      @user.avatar.attach(params[:user][:avatar])
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
       else
