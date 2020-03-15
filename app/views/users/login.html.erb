@@ -1,0 +1,17 @@
+<h1>Log In</h1>
+
+<% form_for :login do |f| %>
+  <p>
+    <%=f.label :email%>
+    <%=f.text_field :email%>
+  </p>
+  <p>
+    <%=f.label :password %>
+    <%=f.password_field :password %>
+  </p>
+  <p class="log_in"><%=f.submit%></p>
+  
+  <p><h4>New User</h4><%=link_to "Register", new_user_path%></p>
+
+
+<% end %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row justify-content-start">
+ <strong><%= @post.title %></strong>
+</div>
+<div class="row justify-content-around">
+<div class="col-4">
+  <%= @post.description %>
+</div>
+
+
+<% if @post.user_id == @current_user.id %>
+<div class="col-4">
+<%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-primary btn-sm" %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-sm" %> 
+<% end %>
+<%= link_to 'Back', posts_path, :class => "btn btn-primary btn-sm" %>
+</div>
+</div>
+
+<table>
+  
+
+  <tbody>
+  <%if @post.comments.present?%>
+  <div class = "row justify-content-start"><strong>Comments :</strong></div>
+    <% @post.comments.each do |comment| %>
+      <div class ="col">
+        <%= comment.user.name %> : <%= comment.description %>
+      </div>
+      </tr>
+    <% end %>
+    <%end%>
+  </tbody>
+<div class = "row justify-content-start">
+<strong>New Comment</strong>
+<%= render 'comments/form', post: @post %>
+</div>
+</table>
+
+</div>
+
+
+
+
+
+

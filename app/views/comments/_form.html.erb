@@ -1,0 +1,12 @@
+<%= form_for ([post, post.comments.build]) do |form| %>
+<div class = container>
+  <div class="col">
+    <%= form.text_area :description %>
+  </div>
+<div class = "col">
+  <div class="btn btn-primary btn-sm , style = "margin-top: 14px">
+    <%= form.submit %>
+  </div>
+  </div>
+  </div>
+<% end %>

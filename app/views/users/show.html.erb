@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div style="width:100px; height:auto">
+  <%= image_tag(@user.avatar,style:"width:100%") %>
+</div>
+<div class = "col">
+  <strong>Name:</strong>
+  <%= @user.name %>
+  </div>
+
+
+
+<div class = "col">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</div>
+
+</div>
+
+<div class="row">
+<div class = "col">
+<%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary btn-sm"%>
+</div>
+<div class = "col"> 
+<%= link_to 'Back', posts_path, :class => "btn btn-primary btn-sm" %>
+</div>
+</div>

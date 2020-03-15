@@ -1,0 +1,19 @@
+<h1>Log In</h1>
+<p id="notice"><%= notice %></p>
+
+<%= form_tag('/login', method: "post") do  %>
+<div class = "container">
+  <p>
+    <div>Email</div>
+    <%=text_field_tag :email%>
+  </p>
+  <p>
+    <div>Password</div>
+    <%=password_field_tag :password %>
+  </p>
+  <div class="btn btn-primary btn-sm", style = "margin-top: 14px">
+    <%=submit_tag("Login") %></div>
+  <div class = "row">
+  <p>New to Blog ? -- </p> <%=link_to "Register here", new_user_path%>
+</div>
+<% end %>
