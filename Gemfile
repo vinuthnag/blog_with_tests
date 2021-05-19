@@ -13,7 +13,7 @@ end
 
 # Use Puma as the app server
 gem 'devise'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 group :development, :test do
